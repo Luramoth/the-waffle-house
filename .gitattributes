@@ -1,3 +1,3 @@
 addons/wakatime/wakatime*/* linguist-vendored
 
-.gd linguist-language=GDScript
+*.gd linguist-language=GDScript
