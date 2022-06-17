@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/materials/waffle/waffle.tres" type="Material" id=2]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -14,7 +15,7 @@ transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -1, 0 )
 [node name="MeshInstance" type="MeshInstance" parent="floor"]
 mesh = SubResource( 1 )
 skeleton = NodePath("")
-material/0 = null
+material/0 = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="floor"]
 shape = SubResource( 2 )
