@@ -20,4 +20,6 @@ material/0 = null
 shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0374552, 1.59464, 0.0544252 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.816563, 0.433202, -0.381524, 0.00462836, 0.655993, 0.754753, 0.577237, -0.618069, 0.533655, 0, 0.923767, 2.79757 )
