@@ -7,18 +7,18 @@
 [ext_resource path="res://assets/materials/waffle/Others_0008_roughness_1k.jpg" type="Texture" id=6]
 
 [resource]
+flags_world_triplanar = true
 albedo_texture = ExtResource( 1 )
 roughness_texture = ExtResource( 6 )
 normal_enabled = true
 normal_scale = 1.0
 normal_texture = ExtResource( 5 )
 ao_enabled = true
-ao_light_affect = 0.0
+ao_light_affect = 1.0
 ao_texture = ExtResource( 2 )
 ao_on_uv2 = false
 ao_texture_channel = 0
 subsurf_scatter_enabled = true
 subsurf_scatter_strength = 0.0
 subsurf_scatter_texture = ExtResource( 3 )
-uv1_scale = Vector3( 15, 15, 15 )
 uv1_triplanar = true
