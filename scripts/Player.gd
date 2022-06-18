@@ -26,7 +26,7 @@ func get_axis():
 	if Input.is_action_pressed("right"):
 		axis.x -= 1
 	
-	return axis.normalized()
+	return axis
 
 # function gets called every time the physics cycles
 func _physics_process(_delta):
