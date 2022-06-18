@@ -1,11 +1,45 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/materials/waffle/waffle.tres" type="Material" id=2]
+[ext_resource path="res://assets/materials/waffle/Others_0008_color_1k.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/materials/waffle/Others_0008_ao_1k.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/materials/waffle/Others_0008_subsurface_1k.jpg" type="Texture" id=5]
+[ext_resource path="res://assets/materials/waffle/Others_0008_height_1k.png" type="Texture" id=6]
+[ext_resource path="res://assets/materials/waffle/others_0008_normal_opengl_1k.png" type="Texture" id=7]
+[ext_resource path="res://assets/materials/waffle/Others_0008_roughness_1k.jpg" type="Texture" id=8]
 
 [sub_resource type="CubeMesh" id=1]
 
 [sub_resource type="BoxShape" id=2]
+
+[sub_resource type="BoxShape" id=3]
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 3 )
+roughness_texture = ExtResource( 8 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 7 )
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource( 4 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+depth_enabled = true
+depth_scale = -0.05
+depth_deep_parallax = true
+depth_min_layers = 4
+depth_max_layers = 4
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 6 )
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.0
+subsurf_scatter_texture = ExtResource( 5 )
+uv1_scale = Vector3( 1.1, 0.7, 1 )
 
 [node name="test level yeah" type="Spatial"]
 
@@ -24,3 +58,26 @@ shape = SubResource( 2 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.816563, 0.433202, -0.381524, 0.00462836, 0.655993, 0.754753, 0.577237, -0.618069, 0.533655, 0, 0.923767, 2.79757 )
+
+[node name="ramp" type="StaticBody" parent="."]
+transform = Transform( 1.63822, 0.692315, 0, -0.692315, 1.63822, 0, 0, 0, 1.7785, 4.24558, -0.969812, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="ramp"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="ramp"]
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="box" type="RigidBody" parent="."]
+transform = Transform( 0.921124, 0.389269, 0, -0.389269, 0.921124, 0, 0, 0, 1, -2.26845, 3.63794, -9.53674e-07 )
+mass = 26.85
+
+[node name="CollisionShape" type="CollisionShape" parent="box"]
+transform = Transform( 0.973747, 0.0621224, 0.218992, 0.0621225, 0.853, -0.518201, -0.218992, 0.518201, 0.826747, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="box"]
+transform = Transform( 0.973747, 0.0621224, 0.218992, 0.0621225, 0.853, -0.518201, -0.218992, 0.518201, 0.826747, 0, 0, 0 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
