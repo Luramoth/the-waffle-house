@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/materials/waffle/waffle.tres" type="Material" id=2]
@@ -16,6 +16,9 @@
 [sub_resource type="BoxShape" id=3]
 
 [sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="PhysicsMaterial" id=6]
+rough = true
 
 [sub_resource type="SpatialMaterial" id=5]
 albedo_texture = ExtResource( 3 )
@@ -74,6 +77,7 @@ material/0 = ExtResource( 2 )
 [node name="waffle cube" type="RigidBody" parent="."]
 transform = Transform( 0.921124, 0.389269, 0, -0.389269, 0.921124, 0, 0, 0, 1, -2.26645, 3.64299, -0.00416815 )
 mass = 26.85
+physics_material_override = SubResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="waffle cube"]
 transform = Transform( 0.973747, 0.0621224, 0.218992, 0.0621225, 0.853, -0.518201, -0.218992, 0.518201, 0.826747, 0, 0, 0 )
