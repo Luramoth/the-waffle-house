@@ -8,11 +8,23 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody",
+"class": "player",
+"language": "GDScript",
+"path": "res://scripts/Player.gd"
+} ]
+_global_script_class_icons={
+"player": ""
+}
+
 [application]
 
 config/name="the waffle house"
 run/main_scene="res://maps/DEBUG/test level yeah.tscn"
 config/icon="res://assets/icon/icon.png"
+config/macos_native_icon="res://assets/icon/icon.icns"
+config/windows_native_icon="res://assets/icon/icon.ico"
 
 [editor_plugins]
 
