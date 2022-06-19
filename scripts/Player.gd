@@ -1,5 +1,7 @@
 extends KinematicBody
 
+class_name player
+
 #---------------- editables -------------------
 export var SPEED : int = 20
 export var FRICTION : float = 0.2
