@@ -9,5 +9,5 @@ export_presets.cfg
 data_*/
 
 #project specific ignores
-wakatime/
+addons/
 builds/
