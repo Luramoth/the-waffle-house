@@ -3,12 +3,18 @@ extends KinematicBody
 class_name player
 
 #---------------- editables -------------------
-export var SPEED : int = 10
+#walking
+export var WALK_SPEED : int = 10
 export var FRICTION : float = 0.2
 export var ACCELERATION  : float = 0.2
 
+#running
+export var RUN_SPEED : int = 20
+
 #---------------- no touchy -------------------
 var velocity : Vector3
+
+export var is_running : bool
 
 #---------------- functions -------------------
 # grabs axis inputs from WASD or controller
@@ -33,6 +39,15 @@ func get_axis():
 # function gets called every time the physics cycles
 func _physics_process(_delta):
 	var direction : Vector3 = get_axis()
+
+	var SPEED : int
+
+	is_running = Input.is_action_pressed("run")
+
+	if is_running:
+		SPEED = RUN_SPEED
+	else:
+		SPEED = WALK_SPEED
 
 	# apply some friction and acceleration
 	if direction.length() > 0:
