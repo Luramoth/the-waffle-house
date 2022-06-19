@@ -11,7 +11,8 @@ radial_segments = 18
 rings = 2
 
 [node name="Player" type="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0162464, 1.03721, -0.0224509 )
+collision_mask = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": "The player controller of the game"
