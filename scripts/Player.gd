@@ -3,7 +3,7 @@ extends KinematicBody
 class_name player
 
 #---------------- editables -------------------
-#walking
+# walking
 export var WALK_SPEED : int = 30
 export var FRICTION : float = 0.2
 export var ACCELERATION  : float = 0.2
@@ -11,7 +11,10 @@ export var ACCELERATION  : float = 0.2
 #running
 export var RUN_SPEED : int = 50
 
-#gravity
+# jumping
+export var JUMP_POWER: int = 100
+
+# gravity
 export var GRAVITY : int = 300
 export var MAX_SLOPE_ANGLE : float = 50.0
 
@@ -26,18 +29,10 @@ export var is_jumping : bool
 func get_axis():
 	var axis : Vector3 = Vector3.ZERO
 	
-	# up
-	if Input.is_action_pressed("up"):
-		axis.z += 1
-	# down
-	if Input.is_action_pressed("down"):
-		axis.z -= 1
-	# left
-	if Input.is_action_pressed("left"):
-		axis.x += 1
-	# right
-	if Input.is_action_pressed("right"):
-		axis.x -= 1
+	# left and right
+	axis.x = Input.get_action_strength("left") - Input.get_action_strength("right")
+	# up and down
+	axis.z = Input.get_action_strength("up") - Input.get_action_strength("down")
 	
 	return axis
 
@@ -50,7 +45,7 @@ func _ready():
 # function gets called every time the physics cycles
 func _physics_process(delta):
 	var direction : Vector3 = get_axis()
-	var snap : Vector3 = Vector3.DOWN
+	var snap : Vector3 = Vector3.DOWN if not is_jumping else Vector3.ZERO
 
 	var SPEED : int
 
