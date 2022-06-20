@@ -12,13 +12,14 @@ export var ACCELERATION  : float = 0.2
 export var RUN_SPEED : int = 50
 
 #gravity
-export var GRAVITY : int = 150
+export var GRAVITY : int = 300
 export var MAX_SLOPE_ANGLE : float = 50.0
 
 #---------------- no touchy -------------------
 var velocity : Vector3
 
 export var is_running : bool
+export var is_jumping : bool
 
 #---------------- functions -------------------
 # grabs axis inputs from WASD or controller

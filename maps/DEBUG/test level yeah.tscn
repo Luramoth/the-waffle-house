@@ -74,9 +74,19 @@ shape = SubResource( 3 )
 mesh = SubResource( 4 )
 material/0 = ExtResource( 2 )
 
+[node name="ramp2" type="StaticBody" parent="."]
+transform = Transform( 5.03762, 2.12891, 0, -2.12891, 5.03762, 0, 0, 0, 5.46899, -0.0819473, -2.94481, -12.137 )
+
+[node name="CollisionShape" type="CollisionShape" parent="ramp2"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="ramp2"]
+mesh = SubResource( 4 )
+material/0 = ExtResource( 2 )
+
 [node name="waffle cube" type="RigidBody" parent="."]
 transform = Transform( 0.921124, 0.389269, 0, -0.389269, 0.921124, 0, 0, 0, 1, -2.26645, 3.64299, -0.00416815 )
-mass = 26.85
+mass = 1.66
 physics_material_override = SubResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="waffle cube"]
