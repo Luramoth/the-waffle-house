@@ -4,15 +4,15 @@ class_name player
 
 #---------------- editables -------------------
 #walking
-export var WALK_SPEED : int = 3000
+export var WALK_SPEED : int = 30
 export var FRICTION : float = 0.2
 export var ACCELERATION  : float = 0.2
 
 #running
-export var RUN_SPEED : int = 5000
+export var RUN_SPEED : int = 50
 
 #gravity
-export var GRAVITY : int = 15000
+export var GRAVITY : int = 150
 export var MAX_SLOPE_ANGLE : float = 50.0
 
 #---------------- no touchy -------------------
@@ -39,6 +39,12 @@ func get_axis():
 		axis.x -= 1
 	
 	return axis
+
+func _ready():
+	# speed multipliers to accomodate for teh delta framreat de-capping
+	WALK_SPEED *= 100
+	RUN_SPEED *= 100
+	GRAVITY *= 100
 
 # function gets called every time the physics cycles
 func _physics_process(delta):
