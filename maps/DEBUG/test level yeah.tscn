@@ -85,7 +85,7 @@ mesh = SubResource( 4 )
 material/0 = ExtResource( 2 )
 
 [node name="waffle cube" type="RigidBody" parent="."]
-transform = Transform( 0.921124, 0.389269, 0, -0.389269, 0.921124, 0, 0, 0, 1, -2.26645, 3.64299, -0.00416815 )
+transform = Transform( 0.921124, 0.389269, 0, -0.389269, 0.921124, 0, 0, 0, 1, -2.26645, 3.64765, 0.0475849 )
 mass = 1.66
 physics_material_override = SubResource( 6 )
 
