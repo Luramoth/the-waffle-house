@@ -9,18 +9,12 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "",
-"class": "GitAPI",
-"language": "NativeScript",
-"path": "res://addons/godot-git-plugin/git_api.gdns"
-}, {
 "base": "KinematicBody",
 "class": "player",
 "language": "GDScript",
 "path": "res://scripts/Player.gd"
 } ]
 _global_script_class_icons={
-"GitAPI": "",
 "player": ""
 }
 
@@ -34,11 +28,11 @@ config/windows_native_icon="res://assets/icon/icon.ico"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/wakatime/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [gdnative]
 
-singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
+singletons=[  ]
 
 [input]
 

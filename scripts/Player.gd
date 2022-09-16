@@ -24,6 +24,8 @@ var velocity : Vector3
 export var is_running : bool
 export var is_jumping : bool
 
+export (int, 0, 200) var push = 1
+
 #---------------- functions -------------------
 # grabs axis inputs from WASD or controller
 func get_axis():
@@ -83,3 +85,9 @@ func _physics_process(delta):
 	# seventh and last one is infinate inertia, it tells the engien wether or not the player is an unstoppable force in which no physics objects can contest
 	# or in other words, wether or not physics objects can stop the player from moving
 	velocity = move_and_slide_with_snap(velocity * delta, snap, Vector3.UP, true, 4, deg2rad(MAX_SLOPE_ANGLE), false)
+	
+	# shove objects around
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		if collision.collider.is_in_group("bodies"):
+			collision.collider.apply_central_impulse(-collision.normal * push)
